@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 
 const Discovery = () => {
   return (
-    <View>
+    <View style={{ backgroundColor: "black", flex: 1 }}>
       <Text>Discovery</Text>
     </View>
   );

@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 
 const TV = () => {
   return (
-    <View>
+    <View style={{ backgroundColor: "black", flex: 1 }}>
       <Text>TV</Text>
     </View>
   );
