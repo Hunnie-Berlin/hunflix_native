@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components/native";
 import PropTypes from "prop-types";
 import Poster from "../Poster";
-import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
+import Votes from "../Votes";
 
 const Container = styled.View`
   width: 100%;
@@ -15,7 +15,6 @@ const BG = styled.Image`
   width: 100%;
   opacity: 0.6;
   position: absolute;
-  background-color: yellow;
 `;
 
 const Content = styled.View`
@@ -26,31 +25,31 @@ const Content = styled.View`
 `;
 const Data = styled.View`
   width: 50%;
+  height: 100%;
   align-items: flex-start;
 `;
 
 const Title = styled.Text`
+  font-size: 16px;
+  font-weight: 700;
   color: white;
-  font-weight: bold;
-  font-size: 18px;
+  margin: 15px 0 10px;
 `;
-const Votes = styled.Text`
-  color: rgb(220, 220, 220);
-  font-size: 12px;
-  margin: 10px 0px 5px;
-`;
+
 const Overview = styled.Text`
   color: white;
   opacity: 0.7;
   font-size: 14px;
   font-weight: 600;
+  margin-top: 5px;
 `;
 
 const Button = styled.View`
   background-color: #e74c3c;
-  padding: 3px 6px;
+  padding: 4px 8px;
   border-radius: 3px;
   margin-top: 15px;
+  align-self: flex-end;
 `;
 const ButtonText = styled.Text`
   color: white;
@@ -64,9 +63,7 @@ const Slide = ({ id, title, bgImg, votes, overview, poster }) => {
         <Poster poster={poster} />
         <Data>
           <Title numberOfLines={1}>{title}</Title>
-          <Votes>
-            <Ionicons name="ios-star" color="gold" /> {votes} / 10
-          </Votes>
+          <Votes votes={votes} />
           <Overview numberOfLines={6}>{overview}</Overview>
           <TouchableOpacity>
             <Button>
