@@ -24,6 +24,7 @@ const MoviesPresenter = ({ isLoading, nowPlaying, popular, upcoming }) => {
     <ScrollView
       style={{ backgroundColor: "black" }}
       contentContainerStyle={{
+        flex: isLoading ? 1 : 0,
         justifyContent: isLoading ? "center" : "flex-start",
       }}
     >

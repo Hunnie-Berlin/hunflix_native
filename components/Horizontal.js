@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 import PropTypes from "prop-types";
 import { TouchableOpacity } from "react-native";
 import Poster from "./Poster";
+import { formatDate } from "../utils";
 
 const Container = styled.View`
   flex-direction: row;
@@ -24,6 +25,7 @@ const Title = styled.Text`
 const Date = styled.Text`
   color: rgb(220, 220, 220);
   font-size: 12px;
+  font-weight: 700;
   margin: 5px 0;
 `;
 
@@ -42,7 +44,7 @@ const Horizontal = ({ id, title, releaseDate, overview, poster }) => {
         <Poster poster={poster} />
         <Data>
           <Title>{title}</Title>
-          <Date>{releaseDate}</Date>
+          {releaseDate ? <Date>{formatDate(releaseDate)}</Date> : null}
           <Overview numberOfLines={6}>{overview}</Overview>
         </Data>
       </Container>
@@ -53,7 +55,7 @@ const Horizontal = ({ id, title, releaseDate, overview, poster }) => {
 Horizontal.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  releaseDate: PropTypes.string.isRequired,
+  releaseDate: PropTypes.string,
   overview: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
 };
