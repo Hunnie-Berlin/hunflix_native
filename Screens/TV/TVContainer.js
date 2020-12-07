@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { tvApi } from "../../api";
 import TVPresenter from "./TVPresenter";
 
-const TV = () => {
+const TVContainer = () => {
   const [shows, setShows] = useState({
     isLoading: true,
     airingToday: [],
@@ -34,4 +34,4 @@ const TV = () => {
   return <TVPresenter {...shows} />;
 };
 
-export default TV;
+export default TVContainer;
