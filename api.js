@@ -39,7 +39,6 @@ export const moviesApi = {
 
 export const tvApi = {
   airingToday: () => getData("/tv/airing_today"),
-  thisWeek: () => getData("/tv/on_the_air"),
   popular: () => getData("/tv/popular"),
   topRated: () => getData("/tv/top_rated"),
   detail: (id) => getData(`/tv/${id}`),
