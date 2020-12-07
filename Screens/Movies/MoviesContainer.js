@@ -29,7 +29,8 @@ const MoviesContainer = () => {
   useEffect(() => {
     getData();
   }, []);
-  return <MoviesPresenter {...movies} />;
+
+  return <MoviesPresenter refreshFn={getData} {...movies} />;
 };
 
 export default MoviesContainer;

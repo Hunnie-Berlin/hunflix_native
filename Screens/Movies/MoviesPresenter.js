@@ -21,9 +21,15 @@ const SliderContainer = styled.View`
 
 const Container = styled.View``;
 
-const MoviesPresenter = ({ isLoading, nowPlaying, popular, upcoming }) => {
+const MoviesPresenter = ({
+  isLoading,
+  nowPlaying,
+  popular,
+  upcoming,
+  refreshFn,
+}) => {
   return (
-    <ScrollContainer isLoading={isLoading}>
+    <ScrollContainer isLoading={isLoading} refreshFn={refreshFn}>
       <SliderContainer>
         <Swiper controlsEnabled={false} loop timeout={3}>
           {nowPlaying.map((movie) => (

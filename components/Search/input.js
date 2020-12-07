@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const TextInput = styled.TextInput`
   background-color: white;
-  margin: 40px 30px;
+  margin: 5px 30px 10px;
   padding: 8px 16px;
   border-radius: 20px;
 `;
@@ -16,6 +16,7 @@ const Input = ({ placeholder, value, onChange, onSubmit }) => (
     onChangeText={onChange}
     onSubmitEditing={onSubmit}
     returnKeyType={"search"}
+    autoCorrect={false}
   />
 );
 

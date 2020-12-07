@@ -10,9 +10,15 @@ import Horizontal from "../../components/Horizontal";
 
 const Container = styled.View``;
 
-const TVPresenter = ({ isLoading, popular, topRated, airingToday }) => {
+const TVPresenter = ({
+  isLoading,
+  popular,
+  topRated,
+  airingToday,
+  refreshFn,
+}) => {
   return (
-    <ScrollContainer isLoading={isLoading}>
+    <ScrollContainer isLoading={isLoading} refreshFn={refreshFn}>
       <Container>
         <HorizontalSlider title={"Popular Shows"}>
           {popular.map((show) => (
