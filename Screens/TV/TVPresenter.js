@@ -23,6 +23,7 @@ const TVPresenter = ({
         <HorizontalSlider title={"Popular Shows"}>
           {popular.map((show) => (
             <Vertical
+              isTV={true}
               key={show.id}
               id={show.id}
               poster={apiImage(show.poster_path)}
@@ -34,6 +35,7 @@ const TVPresenter = ({
         <HorizontalSlider title={"Top Rated Shows"}>
           {topRated.map((show) => (
             <Vertical
+              isTV={true}
               key={show.id}
               id={show.id}
               poster={apiImage(show.poster_path)}
@@ -47,6 +49,7 @@ const TVPresenter = ({
             (show) =>
               show.poster_path && (
                 <Horizontal
+                  isTV={true}
                   key={show.id}
                   id={show.id}
                   title={show.original_name}

@@ -12,7 +12,7 @@ const Text = styled.Text`
 const Votes = ({ votes }) => {
   return (
     <Text>
-      <Ionicons name="ios-star" color="gold" /> {votes} / 10
+      <Ionicons name="ios-star" color="gold" /> {votes ? votes : 0} / 10
     </Text>
   );
 };

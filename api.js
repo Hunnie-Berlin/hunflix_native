@@ -27,7 +27,8 @@ export const moviesApi = {
   nowPlaying: () => getData("/movie/now_playing"),
   popular: () => getData("/movie/popular"),
   upcoming: () => getData("/movie/upcoming"),
-  detail: (id) => getData(`/movie/${id}`),
+  detail: (id) =>
+    getData(`/movie/${id}`, { params: { append_to_response: "videos" } }),
   search: (term) =>
     getData("/search/movie", {
       params: {
@@ -41,7 +42,8 @@ export const tvApi = {
   airingToday: () => getData("/tv/airing_today"),
   popular: () => getData("/tv/popular"),
   topRated: () => getData("/tv/top_rated"),
-  detail: (id) => getData(`/tv/${id}`),
+  detail: (id) =>
+    getData(`/tv/${id}`, { params: { append_to_response: "videos" } }),
   search: (term) =>
     getData("/search/tv", {
       params: {

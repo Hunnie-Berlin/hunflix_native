@@ -28,7 +28,17 @@ export default ({ route }) => {
           headerTitle: getRouteName(route),
         })}
       />
-      <Stack.Screen name="Detail" component={Detail} />
+      <Stack.Screen
+        name="Detail"
+        component={Detail}
+        options={({
+          route: {
+            params: { title },
+          },
+        }) => ({
+          headerTitle: title,
+        })}
+      />
     </Stack.Navigator>
   );
 };

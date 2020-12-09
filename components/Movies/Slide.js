@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
 import PropTypes from "prop-types";
+import { useNavigation } from "@react-navigation/native";
 import Poster from "../Poster";
 import { TouchableOpacity } from "react-native";
 import Votes from "../Votes";
@@ -56,6 +57,18 @@ const ButtonText = styled.Text`
 `;
 
 const Slide = ({ id, title, bgImg, votes, overview, poster }) => {
+  const navigation = useNavigation();
+  const goToDetail = () => {
+    navigation.navigate("Detail", {
+      id,
+      title,
+      bgImg,
+      votes,
+      overview,
+      poster,
+    });
+  };
+
   return (
     <Container>
       <BG source={{ uri: bgImg }} />
@@ -65,7 +78,7 @@ const Slide = ({ id, title, bgImg, votes, overview, poster }) => {
           <Title numberOfLines={1}>{title}</Title>
           <Votes votes={votes} />
           <Overview numberOfLines={6}>{overview}</Overview>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={goToDetail}>
             <Button>
               <ButtonText>See Detail</ButtonText>
             </Button>

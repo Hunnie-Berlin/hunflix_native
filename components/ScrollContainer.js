@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { ActivityIndicator, RefreshControl, ScrollView } from "react-native";
 import PropTypes from "prop-types";
 
-const ScrollContainer = ({ isLoading, children, refreshFn }) => {
+const ScrollContainer = ({
+  isLoading,
+  children,
+  refreshFn,
+  contentContainerStyle,
+}) => {
   const [refreshing, setRefreshing] = useState(false);
   const onRefresh = async () => {
     setRefreshing(true);
@@ -23,6 +28,7 @@ const ScrollContainer = ({ isLoading, children, refreshFn }) => {
       contentContainerStyle={{
         flex: isLoading ? 1 : 0,
         justifyContent: isLoading ? "center" : "flex-start",
+        ...contentContainerStyle,
       }}
     >
       {isLoading ? <ActivityIndicator color="white" size="large" /> : children}
