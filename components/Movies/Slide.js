@@ -77,7 +77,7 @@ const Slide = ({ id, title, bgImg, votes, overview, poster }) => {
         <Data>
           <Title numberOfLines={1}>{title}</Title>
           <Votes votes={votes} />
-          <Overview numberOfLines={6}>{overview}</Overview>
+          <Overview numberOfLines={5}>{overview}</Overview>
           <TouchableOpacity onPress={goToDetail}>
             <Button>
               <ButtonText>See Detail</ButtonText>
