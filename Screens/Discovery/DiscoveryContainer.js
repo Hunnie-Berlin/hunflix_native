@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { View, Text } from "react-native";
-import { moviesApi } from "../api";
+import { moviesApi } from "../../api";
+import DiscoveryPresenter from "./DiscoveryPresenter";
 
 const Discovery = () => {
   const [movies, setMovies] = useState({
@@ -17,11 +17,7 @@ const Discovery = () => {
   useEffect(() => {
     getData();
   }, []);
-  return (
-    <View style={{ backgroundColor: "black", flex: 1 }}>
-      <Text style={{ color: "white" }}>{movies.discover.length}</Text>
-    </View>
-  );
+  return <DiscoveryPresenter {...movies} />;
 };
 
 export default Discovery;
