@@ -46,10 +46,10 @@ const Tabs = ({ route }) => {
         },
       }}
     >
-      <Tab.Screen name="Discovery" component={Discovery} />
       <Tab.Screen name="Movies" component={Movies} />
       <Tab.Screen name="TV" component={TV} />
       <Tab.Screen name="Search" component={Search} />
+      <Tab.Screen name="Discovery" component={Discovery} />
     </Tab.Navigator>
   );
 };
